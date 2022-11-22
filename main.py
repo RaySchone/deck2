@@ -13,6 +13,14 @@ class Card:
     def __init__(self, value, suit):
         self.cardValue = value
         self.cardSuit = suit
+        if value == 1:
+            self.cardValue = "A"
+        elif value == 11:
+            self.cardValue = "J"
+        elif value == 12:
+            self.cardValue = "Q"
+        elif value == 13:
+            self.cardValue = "K"
 
 
 class Deck:
