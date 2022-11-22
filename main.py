@@ -1,16 +1,42 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import random
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Value:
+    pass
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Suit:
+    pass
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+class Card:
+    def __init__(self, value, suit):
+        self.cardValue = value
+        self.cardSuit = suit
+
+
+class Deck:
+    def __init__(self):
+        self.cards = []
+
+    def shuffle_deck(self):
+        random.shuffle(self.cards)
+
+    def create_deck(self):
+        for suit in ["\u2665", "\u2666", "\u2663", "\u2660"]:
+            for value in range(1, 14):
+                new_card = Card(value, suit)
+                self.cards.append(new_card)
+
+    def print_deck(self):
+        for card in self.cards:
+            print(card.cardValue, card.cardSuit)
+
+    def get_card(self):
+        pass
+
+
+new_deck = Deck()
+new_deck.create_deck()
+new_deck.shuffle_deck()
+new_deck.print_deck()
