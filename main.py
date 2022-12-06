@@ -49,11 +49,13 @@ class Deck:
 
     # this pulls a card from the deck
     def get_card(self):
-        pass
+        for card in self.cards:
+            print(card)
 
-
+# hi
 # the calls to action
 new_deck = Deck()
 new_deck.create_deck()
 new_deck.shuffle_deck()
 new_deck.print_deck()
+#new_deck.get_card()
